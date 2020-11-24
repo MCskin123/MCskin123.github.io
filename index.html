@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <style>
+/* Minecraft-like pixely font */
 @font-face {
-   font-family: Minecraftia;
-   src: url(minecraftia.tff);
+  font-family: minecraftia;
+  src: url( 'minecraftia.ttf' );
 }
 
-* {
-   font-family: Minecraftia;
-}
+/* General page style */
+
+body {
+  height: 100%;
+  
+  font-family: minecraftia;
+  font-size: 16px;
+ }
 </style>
 <style>
+  .nojs {
+    color: red;
+    font-size: 25;
+    font-family: minecraftia;
+  }
 	.mcbutton {
   background-image: url(nobutton.png);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: 50% 50%;
+  font-family: minecraftia;
+  font-size: 13px;
+  background-image: url(nobutton.png);
+  color: white;
   /* put the height and width of your image here */
-  height: 20px;
-  width: 100px;
+  height: 30px;
+  width: 150px;
   border: none;
 }
 .mcbutton:hover {
     background-image: url(button.png);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: 50% 50%;
+  font-family: minecraftia;
+  font-size: 13px;
+  background-image: url(button.png); 
+  color: yellow;
   /* put the height and width of your image here */
-  height: 20px;
-  width: 100px;
+  height: 30px;
+  width: 150px;
   border: none;
 }
 button span {
@@ -46,8 +65,22 @@ body {
 	color: white;
 }
 </style>
+<style>
+ input[type=text] {
+  font-family: minecraftia;
+  font-size: 16px;
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #000000;
+  color: white;
+}
+</style>
+</style>
 <noscript>
-	<h1>javascript is needed for this website</h1>
+	<h1 class="nojs" >javascript is needed for this website</h1>
 </noscript>
 <audio id="click">
   <source src="click.ogg" type="audio/ogg">
@@ -92,7 +125,8 @@ body {
 <br>
 <p class="Minecraftia">Thanks To minotar.net For Skin Preveiws And Grabbing Api.</p>
 <br>
-<input type="text" id="sn">
+<input class="txt" type="text" id="sn">
+<br>
 <button class="mcbutton" onclick="ds()">Download</button>
 <button class="mcbutton" onclick="ls()">Preveiw</button>
 <br>
