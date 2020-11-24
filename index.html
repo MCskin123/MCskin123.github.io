@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <style>
-.sansserif {
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+   font-family: Minecraftia;
+   src: url(minecraftia.tff);
+}
+
+* {
+   font-family: Minecraftia;
+}
+</style>
+<style>
+	.mcbutton {
+  background-image: url(nobutton.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 20px;
+  width: 100px;
+  border: none;
+}
+.mcbutton:hover {
+    background-image: url(button.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 20px;
+  width: 100px;
+  border: none;
+}
+button span {
+  display: none;
 }
 </style>
 <style>
@@ -21,32 +49,54 @@ body {
 <noscript>
 	<h1>javascript is needed for this website</h1>
 </noscript>
+<audio id="click">
+  <source src="click.ogg" type="audio/ogg">
+</audio>
+
 <script>
 	function ls() 
 	{
+  var au = document.getElementById("click");
+  au.play();
 	var text = document.getElementById("sn").value
-	var url = "https://minotar.net/body/" + text
-	document.getElementById("spre").src = url;
+  if (text.length == 0)
+  {
+	 alert("Enter A Username In The Text Box")
+  }
+  else 
+  {
+   var url = "https://minotar.net/body/" + text
+  document.getElementById("spre").src = url;
+ }
     }
 </script>
 <script>
 	function ds()
 	{
-     var text = document.getElementById("sn").value
-	 var url = "https://minotar.net/download/" + text
-	 window.open(url);	
+  var au = document.getElementById("click");
+  au.play();
+  var text = document.getElementById("sn").value
+  if (text.length == 0)
+  {
+   alert("Enter A Username In The Text Box")
+  }
+  else 
+  {
+   var url = "https://minotar.net/download/" + text
+   window.open(url);
+ }
 	}
 </script>
-<h1 class="sansserif">Minecraft Skin Grabber</h1>
-<p class="sansserif">Put The Username Of The User You Want To Grab into The Text Box!</p>
+<h1 class="Minecraftia">Minecraft Skin Grabber</h1>
+<p class="Minecraftia">Put The Username Of The User You Want To Grab into The Text Box!</p>
 <br>
-<p class="sansserif">Thanks To minotar.net For Skin Preveiws And Grabbing Api.</p>
+<p class="Minecraftia">Thanks To minotar.net For Skin Preveiws And Grabbing Api.</p>
 <br>
 <input type="text" id="sn">
-<button onclick="ds()">Grab & Download</button>
-<button onclick="ls()">Grab & Preveiw</button>
+<button class="mcbutton" onclick="ds()">Download</button>
+<button class="mcbutton" onclick="ls()">Preveiw</button>
 <br>
-<p class="sansserif">Skin Preview(Click Grab & Preveiw To Refresh)</p>
+<p class="Minecraftia">Skin Preview (Click Preveiw To Refresh)</p>
 <br>
 <img id="spre" src="https://minotar.net/body/MHF_steve" width=100 height=200>
 
